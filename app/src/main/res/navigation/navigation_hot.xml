@@ -2,11 +2,29 @@
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_hot"
     app:startDestination="@id/hotFragment">
 
     <fragment
         android:id="@+id/hotFragment"
         android:name="com.example.bottomnavigationexam.HotFragment"
-        android:label="HotFragment" />
+        android:label="HotFragment" >
+        <action
+            android:id="@+id/action_hotFragment_to_oneFragment"
+            app:destination="@id/oneFragment" />
+        <action
+            android:id="@+id/action_hotFragment_to_twoFragment"
+            app:destination="@id/twoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oneFragment"
+        android:name="com.example.bottomnavigationexam.OneFragment"
+        android:label="fragment_one"
+        tools:layout="@layout/fragment_one" />
+    <fragment
+        android:id="@+id/twoFragment"
+        android:name="com.example.bottomnavigationexam.TwoFragment"
+        android:label="fragment_two"
+        tools:layout="@layout/fragment_two" />
 </navigation>
