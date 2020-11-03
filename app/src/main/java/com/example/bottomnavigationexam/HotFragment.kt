@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +19,6 @@ class HotFragment : Fragment(R.layout.fragment_hot) {
 
     override fun onResume() {
         super.onResume()
-
         init()
     }
     private fun init() {
@@ -36,9 +38,12 @@ class HotFragment : Fragment(R.layout.fragment_hot) {
     }
     private val rememberListener = object : ItemClickListener {
         override fun onClick(item: String) {
-            Log.e("tag", "what " + item)
+
             when(item) {
-                "0" -> findNavController().navigate(R.id.action_hotFragment_to_oneFragment)
+                "0" -> {
+                    setFragmentResult("requestKey11", bundleOf("data" to "hello"))
+                    findNavController().navigate(R.id.action_hotFragment_to_oneFragment)
+                }
                 "1" ->findNavController().navigate(R.id.action_hotFragment_to_twoFragment)
                 else -> findNavController().navigate(R.id.action_hotFragment_to_twoFragment)
             }
