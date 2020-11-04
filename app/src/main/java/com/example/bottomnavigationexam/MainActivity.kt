@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpBottomNavigationBar(){
         bottomNavigationView = findViewById(R.id.bottom_nav)
-        val navGraphIds = listOf(R.navigation.navigation_home, R.navigation.navigation_hot, R.navigation.navigation_list)
+        val navGraphIds = listOf(R.navigation.navigation_home, R.navigation.navigation_hot, R.navigation.navigation_list, R.navigation.navigation_blank)
 
         bottomNavigationView.setupWithNavController(
             navGraphIds, supportFragmentManager, R.id.nav_host_container, intent
