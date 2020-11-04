@@ -18,6 +18,5 @@ class OneFragment : Fragment(R.layout.fragment_one) {
             val test = bundle.getString("data", "")
             Log.e("tag", "뭐야 "+ test) // hello 나옴
         }
-
     }
 }
